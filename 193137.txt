@@ -1,0 +1,296 @@
+git init 
+git clone https://github.com/ivamilosavljevic/SI_2022_lab1_193137.git - клонирање на проектот од претходно направеното GitHub Repo
+cd SI_2022_lab1_193137 - влегуваме во клонираниот фолдер со проектот
+git add shopping_list.txt - додавање на направената текстуална датотека во локалниот репозиториум
+git commit -m "Add 5 items to the shopping list" - commit порака за додадената txt датотека
+git add shopping_list.txt - после додадената количина во текстуалната датотека повторно ја додааваме текстуалната датотека со нејзините промени на локалното репо 
+git commit -m "Add quantities to the items" - поради новата промена, во новиот commit ставаме нова порака со која објаснуваме што сме направиле 
+git branch branch1 - креираме нова гранка со име branch1
+git branch branch2 - креираме нова гранка со име branch2
+git log - ги внесуваме досегашните логови (точка бр.8)
+
+//output from git log //
+
+commit 87c8aa8d7ce45eebe674806051911cac93f4b106 (HEAD -> master, branch2, branch1)
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 15:31:18 2022 +0200
+
+    Add quantities to the items
+
+commit 94dc41204ba9f3c886e2dd30d617e77b3b3a2325
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 15:30:02 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit b5996a8a0185355c5e285a80cf9e7ea3c2a1f8e7 (origin/master, origin/HEAD)
+Author: ivamilosavljevic <63470073+ivamilosavljevic@users.noreply.github.com>
+Date:   Tue Apr 5 15:15:14 2022 +0200
+
+    Update README.md
+
+commit 7485f5ca4cd62cc048dd8d301cd3da6b88f9a0e8
+Author: ivamilosavljevic <63470073+ivamilosavljevic@users.noreply.github.com>
+Date:   Tue Apr 5 15:13:38 2022 +0200
+
+     Initial commit
+
+//output from git log //
+
+git push - локалните измени ги прикачуваме на глобалното односно remote repo 
+//Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 689 bytes | 229.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/ivamilosavljevic/SI_2022_lab1_193137.git
+   b5996a8..87c8aa8  master -> master
+//
+git push -all  - за да се додадат и ново додадените гранки branch1 и branch2 
+//Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/ivamilosavljevic/SI_2022_lab1_193137.git
+ * [new branch]      branch1 -> branch1
+ * [new branch]      branch2 -> branch2
+
+git checkout branch1  - се префрламе на гранката branch1
+git commit -a -m "Change quantity of item #5" - ќе ги додаде сите modified tracked files со дадената commit порака (го модифициравме само shopping_list.txt така да ова е еден вид shortcut за да не го додаваме во посебна команда, па да ја пишуваме командата за порака во друга линија)
+git checkout master - се префрламе на гранката master
+git add shopping_list.txt  - ја додаваме
+git commit -m "Change quantity of item #2" - ја додаваме commit пораката
+git push --all - локалните измени ги апдејтираме на глобалниот репозиториум
+git checkout branch2 - се префрламе на гранката branch2
+git commit -a -m "Modify item #4" - како и погоре, ги додаваме сите modified tracked files(во нашиот случај само shopping_list.txt) и на тој commit му ставаме друга порака 
+
+17. Внесете ги досегашните логови во документацијата
+git log
+
+//output from git log //
+commit 90a972075c9f0d5afbd5a2286020b6b75133b7e1 (HEAD -> branch2)
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 16:35:36 2022 +0200
+
+    Modify item #4
+
+commit 87c8aa8d7ce45eebe674806051911cac93f4b106 (origin/branch2)
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 15:31:18 2022 +0200
+
+    Add quantities to the items
+
+commit 94dc41204ba9f3c886e2dd30d617e77b3b3a2325
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 15:30:02 2022 +0200
+
+:...skipping...
+commit 90a972075c9f0d5afbd5a2286020b6b75133b7e1 (HEAD -> branch2)
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 16:35:36 2022 +0200
+
+    Modify item #4
+
+commit 87c8aa8d7ce45eebe674806051911cac93f4b106 (origin/branch2)
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 15:31:18 2022 +0200
+
+    Add quantities to the items
+
+commit 94dc41204ba9f3c886e2dd30d617e77b3b3a2325
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 15:30:02 2022 +0200
+
+    Add 5 items to the shopping list
+:...skipping...
+commit 90a972075c9f0d5afbd5a2286020b6b75133b7e1 (HEAD -> branch2)
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 16:35:36 2022 +0200
+
+    Modify item #4
+
+commit 87c8aa8d7ce45eebe674806051911cac93f4b106 (origin/branch2)
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 15:31:18 2022 +0200
+
+    Add quantities to the items
+
+commit 94dc41204ba9f3c886e2dd30d617e77b3b3a2325
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 15:30:02 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit b5996a8a0185355c5e285a80cf9e7ea3c2a1f8e7
+Author: ivamilosavljevic <63470073+ivamilosavljevic@users.noreply.github.com>
+Date:   Tue Apr 5 15:15:14 2022 +0200
+
+    Update README.md
+
+:...skipping...
+commit 90a972075c9f0d5afbd5a2286020b6b75133b7e1 (HEAD -> branch2)
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 16:35:36 2022 +0200
+
+    Modify item #4
+
+commit 87c8aa8d7ce45eebe674806051911cac93f4b106 (origin/branch2)
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 15:31:18 2022 +0200
+
+    Add quantities to the items
+
+commit 94dc41204ba9f3c886e2dd30d617e77b3b3a2325
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 15:30:02 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit b5996a8a0185355c5e285a80cf9e7ea3c2a1f8e7
+Author: ivamilosavljevic <63470073+ivamilosavljevic@users.noreply.github.com>
+Date:   Tue Apr 5 15:15:14 2022 +0200
+
+    Update README.md
+
+commit 7485f5ca4cd62cc048dd8d301cd3da6b88f9a0e8
+Author: ivamilosavljevic <63470073+ivamilosavljevic@users.noreply.github.com>
+:...skipping...
+commit 90a972075c9f0d5afbd5a2286020b6b75133b7e1 (HEAD -> branch2)
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 16:35:36 2022 +0200
+
+    Modify item #4
+
+commit 87c8aa8d7ce45eebe674806051911cac93f4b106 (origin/branch2)
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 15:31:18 2022 +0200
+
+    Add quantities to the items
+
+commit 94dc41204ba9f3c886e2dd30d617e77b3b3a2325
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 15:30:02 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit b5996a8a0185355c5e285a80cf9e7ea3c2a1f8e7
+Author: ivamilosavljevic <63470073+ivamilosavljevic@users.noreply.github.com>
+Date:   Tue Apr 5 15:15:14 2022 +0200
+
+    Update README.md
+
+commit 7485f5ca4cd62cc048dd8d301cd3da6b88f9a0e8
+Author: ivamilosavljevic <63470073+ivamilosavljevic@users.noreply.github.com>
+Date:   Tue Apr 5 15:13:38 2022 +0200
+:...skipping...
+commit 90a972075c9f0d5afbd5a2286020b6b75133b7e1 (HEAD -> branch2)
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 16:35:36 2022 +0200
+
+    Modify item #4
+
+commit 87c8aa8d7ce45eebe674806051911cac93f4b106 (origin/branch2)
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 15:31:18 2022 +0200
+
+    Add quantities to the items
+
+commit 94dc41204ba9f3c886e2dd30d617e77b3b3a2325
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 15:30:02 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit b5996a8a0185355c5e285a80cf9e7ea3c2a1f8e7
+Author: ivamilosavljevic <63470073+ivamilosavljevic@users.noreply.github.com>
+Date:   Tue Apr 5 15:15:14 2022 +0200
+
+    Update README.md
+
+commit 7485f5ca4cd62cc048dd8d301cd3da6b88f9a0e8
+Author: ivamilosavljevic <63470073+ivamilosavljevic@users.noreply.github.com>
+Date:   Tue Apr 5 15:13:38 2022 +0200
+
+:...skipping...
+commit 90a972075c9f0d5afbd5a2286020b6b75133b7e1 (HEAD -> branch2)
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 16:35:36 2022 +0200
+
+    Modify item #4
+
+commit 87c8aa8d7ce45eebe674806051911cac93f4b106 (origin/branch2)
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 15:31:18 2022 +0200
+
+    Add quantities to the items
+
+commit 94dc41204ba9f3c886e2dd30d617e77b3b3a2325
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 15:30:02 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit b5996a8a0185355c5e285a80cf9e7ea3c2a1f8e7
+Author: ivamilosavljevic <63470073+ivamilosavljevic@users.noreply.github.com>
+Date:   Tue Apr 5 15:15:14 2022 +0200
+
+    Update README.md
+
+commit 7485f5ca4cd62cc048dd8d301cd3da6b88f9a0e8
+Author: ivamilosavljevic <63470073+ivamilosavljevic@users.noreply.github.com>
+Date:   Tue Apr 5 15:13:38 2022 +0200
+
+    Initial commit
+
+//output from git log //
+
+git add shopping_list.txt - ја додавам текстуалната датотека со новите промени
+git commit --amend -m "Modify item #4 and add item #6" - за да го промениме само последниот commit и да не правиме скроз нов commit ја користиме командата --amend
+ 
+19. Внесете ги досегашните логови во документацијата:
+
+//output from git log //
+ git log
+commit 982d95bc6c0d0fd834a6c2189a59193308a29e68 (HEAD -> branch2)
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 16:35:36 2022 +0200
+
+    Modify item #4 and add item #6
+
+commit 87c8aa8d7ce45eebe674806051911cac93f4b106 (origin/branch2)
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 15:31:18 2022 +0200
+
+    Add quantities to the items
+
+commit 94dc41204ba9f3c886e2dd30d617e77b3b3a2325
+Author: Iva Milosavljevic <ivamilosavljevic@live.com>
+Date:   Tue Apr 5 15:30:02 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit b5996a8a0185355c5e285a80cf9e7ea3c2a1f8e7
+Author: ivamilosavljevic <63470073+ivamilosavljevic@users.noreply.github.com>
+Date:   Tue Apr 5 15:15:14 2022 +0200
+
+    Update README.md
+
+//output from git log //
+
+20. Префрлете се на гранката master и спојте ја гранката branch1 кон master
+git checkout master - се префрламе на гранката master
+git merge branch1 - се споија без проблем
+git merge branch2 - доаѓа до следниов merge conflict:
+
+//Auto-merging shopping_list.txt
+CONFLICT (content): Merge conflict in shopping_list.txt
+Automatic merge failed; fix conflicts and then commit the result.//
+git push -all
+git merge branch2 (втор обид - пак ми покажува следниот конфликт:
+
+//error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+ //
+конфликтот го решив директно на самиот GitHub каде што ги применив промените од branch2 наместо од master (бидејќи последните промени ги направивме на branch2)
+
+
