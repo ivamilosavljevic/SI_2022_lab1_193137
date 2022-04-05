@@ -293,4 +293,6 @@ fatal: Exiting because of an unresolved conflict.
  //
 конфликтот го решив директно на самиот GitHub каде што ги применив промените од branch2 наместо од master (бидејќи последните промени ги направивме на branch2)
 
-
+git add 193137.txt
+git commit -m "Add docs"
+git push -all
