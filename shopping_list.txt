@@ -1,5 +1,6 @@
 1. Mango x 1
 2. Banana x 3
 3. Milk x 2
-4. Strawberries x 4
+4. Raspberries x 4
 5. Broccoli x 2
+6. Strawberries x 9
